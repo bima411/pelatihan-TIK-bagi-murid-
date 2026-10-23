@@ -1,4 +1,3 @@
-
 // ==========================================
 // LR APPAREL - SCRIPT.JS
 // ==========================================
@@ -36,7 +35,70 @@ const DAFTAR_DESAIN = [
     latar: "linear-gradient(140deg, #552e2b, #241819)"
   }
 ];
+function buatKatalog() {
+  katalogGrid.innerHTML = "";
 
+  // Mengosongkan pilihan desain agar tidak berulang.
+  inputDesain.innerHTML =
+    '<option value="">Pilih desain jersi</option>';
+
+  DAFTAR_DESAIN.forEach((desain) => {
+    const kartu = document.createElement("article");
+    kartu.className = "product-card";
+    kartu.dataset.kode = desain.kode;
+
+    kartu.innerHTML = `
+      <div class="product-art"
+           style="background: ${desain.latar}">
+
+        <img
+          class="product-image"
+          src="${desain.gambar}"
+          alt="${desain.nama} LR APPAREL"
+          loading="lazy"
+          onerror="this.style.display='none';
+                   this.nextElementSibling.style.display='block';"
+        >
+
+        <div class="image-fallback" style="display:none;">
+          Foto belum tersedia
+        </div>
+
+        <span class="design-code">${desain.kode}</span>
+      </div>
+
+      <div class="product-info">
+        <h3>${desain.nama}</h3>
+        <p>${desain.deskripsi}</p>
+
+        <div class="product-bottom">
+          <div class="product-price">
+            ${formatRupiah(desain.harga)}
+            <small>Harga awal / potong</small>
+          </div>
+
+          <button
+            class="choose-button"
+            type="button"
+            data-pilih="${desain.kode}">
+            Pilih Desain
+          </button>
+        </div>
+      </div>
+    `;
+
+    katalogGrid.appendChild(kartu);
+
+    const opsi = document.createElement("option");
+    opsi.value = desain.kode;
+    opsi.textContent =
+      `${desain.kode} - ${desain.nama}`;
+
+    inputDesain.appendChild(opsi);
+  });
+
+  perbaruiKartuTerpilih();
+}
 // Biaya tambahan bahan per potong.
 const BIAYA_BAHAN = {
   dryfit: 0,
