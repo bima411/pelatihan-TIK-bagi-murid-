@@ -17,7 +17,6 @@ const DAFTAR_DESAIN = [
     harga: 100000,
     deskripsi: "Sporty, dinamis, dan modern.",
     gambar: "817a6d69694d38d5801bb6d04054fce9.jpg.jpeg",
-    warna: "#c7f36b",
     latar: "linear-gradient(140deg, #293d1b, #131d15)"
   },
   {
@@ -26,7 +25,6 @@ const DAFTAR_DESAIN = [
     harga: 110000,
     deskripsi: "Minimalis dengan karakter kuat.",
     gambar: "37344e2b8be089e40d7e74e6bbc7daca.jpg.jpeg",
-    warna: "#d7dce6",
     latar: "linear-gradient(140deg, #354254, #151d29)"
   },
   {
@@ -35,7 +33,6 @@ const DAFTAR_DESAIN = [
     harga: 120000,
     deskripsi: "Tampilan keren untuk angkatan kelas kalian.",
     gambar: "0cb62d88552e79c50b2b9bdb94f3a6ef.jpg.jpeg",
-    warna: "#ff9d72",
     latar: "linear-gradient(140deg, #552e2b, #241819)"
   }
 ];
@@ -49,7 +46,7 @@ const BIAYA_BAHAN = {
 
 const NAMA_BAHAN = {
   dryfit: "Dryfit Standar",
-  premium: "Dryfit Premium",
+  premium: "embos premium",
   interlock: "Interlock"
 };
 
